@@ -21,6 +21,7 @@ class Driver {
       return trip.passenger()
     })
   }
+}
 
 class Passenger {
   constructor (name) {
