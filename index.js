@@ -17,14 +17,10 @@ class Driver {
     }.bind(this))
   }
   passengers () {
-    return store.passengers.filter(function(passenger){
-      const driverTrips = this.trips()
-      return driverTrips.filter(function(trip){
-        return trip.passengerId = passenger.id
-      })
-    }.bind(this))
+    return this.trips().map(function(trip){
+      return trip.passenger()
+    })
   }
-}
 
 class Passenger {
   constructor (name) {
