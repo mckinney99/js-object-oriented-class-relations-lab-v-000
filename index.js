@@ -37,12 +37,9 @@ class Passenger {
  }
 
  drivers () {
-   return store.drivers.filter(function(driver){
-     const passengerTrips = this.trips()
-     return passengerTrips.filter(function(trip){
-       return trip.driverId = driver.id
-     })
-   }.bind(this))
+   return this.trips().map(function(trip){
+     return trip.driver()
+   })
  }
 }
 
