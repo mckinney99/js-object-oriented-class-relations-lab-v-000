@@ -13,4 +13,12 @@ class Driver {
       return trip.driverId === this.id
     }.bind(this))
   }
+  passengers(){
+    return store.passengers.filter(function(passenger){
+      const driverTrips = this.trips()
+      return driverTrips.filter(function(trip){
+        return trip.passengerId = passenger.id
+      })
+    }.bind(this))
+  }
 }
