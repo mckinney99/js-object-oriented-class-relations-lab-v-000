@@ -22,3 +22,4 @@ class Driver {
     }.bind(this))
   }
 }
+}
